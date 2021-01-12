@@ -1,0 +1,26 @@
+{
+  "folders": [
+    {
+      "path": "agileball.service"
+    },
+    {
+      "path": "agileball.interfaces"
+    },
+    {
+      "path": "agileball.console"
+    },
+    {
+      "path": "agileball.subscribertest"
+    },
+    {
+      "path": "agileball.subscriber.game"
+    },
+    {
+      "path": "agileball.subscriber.batter"
+    },
+    {
+      "path": "agileball.runner"
+    }
+  ],
+  "settings": {}
+}
