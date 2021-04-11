@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using agileball.service.actors;
-using Dapr.Actors.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -23,14 +22,7 @@ namespace agileball.service
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder
-                        .UseStartup<Startup>()
-                        .UseActors(rt =>
-                        {
-                            rt.RegisterActor<GameEvent>();
-                            rt.RegisterActor<GameSupervisor>();
-                            rt.RegisterActor<Batter>();
-                            rt.RegisterActor<Team>();
-                        });
+                        .UseStartup<Startup>();
                     //.UseUrls("http://localhost:5000");
                 });
     }

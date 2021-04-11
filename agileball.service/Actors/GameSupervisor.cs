@@ -11,8 +11,8 @@ namespace agileball.service.actors
     public class GameSupervisor : Actor, IGameSupervisor
     {
 
-        public GameSupervisor(ActorService actorService, ActorId actorId)
-            : base(actorService, actorId)
+        public GameSupervisor(ActorHost host)
+            : base(host)
         {
         }
 

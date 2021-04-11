@@ -12,10 +12,10 @@ namespace agileball.service.actors
     {
         private string _teamId;
         private int _hits, _atBats, _walks, _homeruns, _rbis, _wins, _losses, _games;
-        public Team(ActorService actorService, ActorId actorId)
-            : base(actorService, actorId)
+        public Team(ActorHost host)
+            : base(host)
         {
-            _teamId = actorId.GetId();
+            _teamId = host.Id.GetId();
         }
 
         public async Task TellHandleGameCompleted(completedGame msg)

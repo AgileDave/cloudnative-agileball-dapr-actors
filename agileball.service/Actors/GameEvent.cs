@@ -14,10 +14,10 @@ namespace agileball.service.actors
     {
         private string _gameId, _homeTeam, _visitingTeam;
         private int _homeScore, _visitorScore;
-        public GameEvent(ActorService actorService, ActorId actorId)
-            : base(actorService, actorId)
+        public GameEvent(ActorHost host)
+            : base(host)
         {
-            _gameId = actorId.GetId();
+            _gameId = host.Id.GetId();
             _homeScore = 0;
             _visitorScore = 0;
         }

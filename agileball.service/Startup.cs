@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using agileball.service.actors;
 using Dapr.Client;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,6 +27,13 @@ namespace agileball.service
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddActors(options =>
+            {
+                options.Actors.RegisterActor<GameEvent>();
+                options.Actors.RegisterActor<GameSupervisor>();
+                options.Actors.RegisterActor<Team>();
+                options.Actors.RegisterActor<Batter>();
+            });
             services.AddDaprClient();
 
             services.AddControllers();
@@ -48,6 +56,7 @@ namespace agileball.service
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapActorsHandlers();
             });
 
             Helpers.DaprClient = new DaprClientBuilder().Build();

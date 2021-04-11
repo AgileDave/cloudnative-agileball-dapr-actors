@@ -42,7 +42,7 @@ namespace agileball.subscriber.game
 
             var ctx = new ServiceManagerBuilder().WithOptions(opts =>
             {
-                opts.ConnectionString = Configuration["Azure:SignalR:ConnectionString"];
+                opts.ConnectionString = Configuration["Azure_SignalR_ConnectionString"];
                 opts.ServiceTransportType = ServiceTransportType.Transient;
             })
             .Build();

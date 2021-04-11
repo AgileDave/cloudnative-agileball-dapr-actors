@@ -12,10 +12,9 @@ namespace agileball.service.actors
     {
         private string _batterId;
         private int _atBats, _hits, _walks, _homeruns, _rbi, _strikeouts, _stolenBases, _ibb, _hbp, _2b, _3b, _bases;
-        public Batter(ActorService actorService, ActorId actorId)
-            : base(actorService, actorId)
+        public Batter(ActorHost host) : base(host)
         {
-            _batterId = actorId.GetId();
+            _batterId = host.Id.GetId();
         }
 
         public async Task TellHandleBatterPlateAppearanceAsync(batterEvent msg)
